@@ -1,14 +1,17 @@
 package sergiu.barsa.demo;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static sergiu.barsa.demo.Utils.sleepq;
 
+@Slf4j
 public class RepoService {
 
     public void persistProcessingResult( String processingResult ) {
-        System.out.println( "Started persisting " + processingResult );
+        log.info( "Started persisting {}", processingResult );
 
         sleepq( 6 );
 
-        System.out.println( "Finished persisting " + processingResult );
+        log.info( "Finished persisting {}", processingResult );
     }
 }

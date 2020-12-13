@@ -1,15 +1,18 @@
 package sergiu.barsa.demo;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static sergiu.barsa.demo.Utils.sleepq;
 
+@Slf4j
 public class RequestService {
 
     public String processRawNote( String rawNote ) {
-        System.out.println( "Started Processing Raw Note " + rawNote );
+        log.info( "Started Processing Raw Note {}", rawNote );
 
         sleepq( 5 );
 
-        System.out.printf( "Finished Processing Raw Note %s and got a result\n", rawNote );
+        log.info( "Finished Processing Raw Note {} and got a result", rawNote );
 
         return rawNote + "result";
     }
